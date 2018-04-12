@@ -48,7 +48,7 @@ provider:
 
 functions:
   create:
-    handler: functions/create.main
+    handler: create.main
     events:
       - http:
           path: notes
@@ -57,7 +57,7 @@ functions:
           authorizer: aws_iam
 
   get:
-    handler: functions/get.main
+    handler: get.main
     events:
       - http:
           path: notes/{id}
@@ -66,7 +66,7 @@ functions:
           authorizer: aws_iam
 
   list:
-    handler: functions/list.main
+    handler: list.main
     events:
       - http:
           path: notes
@@ -75,7 +75,7 @@ functions:
           authorizer: aws_iam
 
   update:
-    handler: functions/update.main
+    handler: update.main
     events:
       - http:
           path: notes/{id}
@@ -83,8 +83,8 @@ functions:
           cors: true
           authorizer: aws_iam
 
- delete:
-    handler: functions/delete.main
+  delete:
+    handler: delete.main
     events:
       - http:
           path: notes/{id}
